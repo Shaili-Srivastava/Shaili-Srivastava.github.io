@@ -35,7 +35,7 @@ nav{
   box-shadow: hsla(212, 97%, 43%, 0.3) 0px 0px 0px 3px;
 }
 nav.sticky{
-  background: #202f59;
+  background: hwb(224 13% 65%);
   padding: 13px 0;
   box-shadow: none;
 }
@@ -141,7 +141,6 @@ nav.sticky .menu-btn{
 #first{
   width: 100%;
   display: flex;
-  /* border: 1px solid rgb(18, 239, 84); */
   box-sizing: border-box;
 }
 #mypic{
@@ -149,20 +148,28 @@ nav.sticky .menu-btn{
   height: 400px;
   margin: auto;
   margin-left: -100px;
- /* border: 2px solid gray; */
- /* border-radius: 30%; */
-
 }
 #mypic>img{
   width: 100%;
   height: 100%;
   border-radius: 70%;
-  box-shadow: hsla(212, 97%, 43%, 0.3) 0px 0px 0px 3px;
+  box-shadow: hsla(212, 97%, 43%, 0.3) 0px 0px 0px 3px; 
+  animation: morph 8s ease-in-out 1s infinite;
 
 }
-#mypic img:hover{
-  transform: scale(1.2);
+@keyframes morph{
+
+0% {
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
 }
+50% {
+  border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+}
+100% {
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+}
+}
+
 .home{
   height: 100vh;
   width: 100%;
@@ -179,7 +186,6 @@ nav.sticky .menu-btn{
   height: 100%;
   margin: auto;
   display: flex;
-  /* border: 1px solid rgb(231, 224, 224); */
   flex-direction: column;
   justify-content: center;
 }
@@ -210,13 +216,11 @@ nav.sticky .menu-btn{
 /* About Section Styling */
 section{
   padding-top: 40px;
-  /* background-color: #0E2431; */
 }
 section .content{
   width: 80%;
   margin: 40px auto;
   font-family: 'Poppins', sans-serif;
-  /* color: white; */
 }
 .about .about-details{
   display: flex;
@@ -298,7 +302,7 @@ section .button button:hover{
   background-color: rgb(28, 28, 84);
   color: #4070f4;
 }
- /* My Skills CSS */
+ /* Tech Stack */
 
  .skills{
   background: #F0F8FF;
@@ -320,30 +324,97 @@ section .button button:hover{
 .skills-details .boxes{
  display: grid;
  grid-template-columns: repeat(6, 1fr);
- gap: 20px;
+ gap: 15px;
  margin: auto;
- justify-content: space-between;
- padding-left: 15%;
 }
 .skills-details .box{
  margin: 20px 0;
  height: auto;
+ text-align: center;
 }
 .skills-details .boxes .topic{
- font-size: 20px;
+ font-size: 17px;
  color: #2f4a95;
 }
 .id{
- width: 100%;
- height: 100%;
+ width: 80%;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-#i{
- font-size: 30px;
- margin-left: 20px;
+/* Skills */
+.box4 {
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
+.box41{
+  width: fit-content;
+  margin: auto;
+  text-align: center;  
+}
+.box41>h1{
+  padding: 5px;
+  border-radius: 12px;
+  color: black;
+  font-weight: bolder;
+}
+.skills-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+.skills-list div{
+  background : #efecec;
+  padding: 40px;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: hsla(212, 97%, 43%, 0.3) 0px 0px 0px 3px; 
 
-
+}
+.skills-list div i{
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.skills-list div h2{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.skills-list div:hover{
+  background:#202f59 ;
+  color: #E0E0E0;
+  transform: translateY(-10px);
+}
+/* Experience */
+.my{
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+}
+#avd{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 100px;
+  gap: 40px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 40px;
+  /* background-color: antiquewhite; */
+}
+.benzo{
+  padding-top: 10px;
+  /* background-color: rgb(62, 104, 141);    */
+  border-radius: 50%;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.benzo h2{
+  font-size: 15px;
+}
+.benzo:hover{
+  color: #033a80;
+}
  
 /* My Projects CSS */
 
@@ -351,11 +422,9 @@ section .button button:hover{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* background-color: white; */
 }
 #linkss{
   height: 50px;
-  /* border: 1px solid red; */
   margin-top: 20px;
 }
 #btns{
@@ -415,6 +484,7 @@ section .button button:hover{
 .services .boxes .box:hover p{
   color: #fff;
 }
+
 /* Contact Me CSS */
 .contact{
   background: #F0F8FF;
@@ -432,7 +502,6 @@ section .button button:hover{
 /* Footer CSS */
 footer{
   background: #202f59;
-  /* background: ; */
   padding: 15px 0;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -449,13 +518,14 @@ footer .text span a{
 footer .text span a:hover{
   text-decoration: underline;
 }
+
 /* Scroll TO Top Button CSS */
 .scroll-button a{
   position: fixed;
   bottom: 20px;
   right: 20px;
   color: #fff;
-background-color: black;
+  background-color: black;
   padding: 7px 12px;;
   font-size: 18px;
   border-radius: 6px;
@@ -469,6 +539,7 @@ background-color: black;
     width: 85%;
   }
 }
+
 @media (max-width: 1000px) {
   .about .about-details{
     justify-content: center;
@@ -487,12 +558,94 @@ background-color: black;
     margin: 20px 0;
     width: calc(100% / 2 - 20px);
   }
+  .skills-details .boxes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: auto;
+   }
+   
+.home{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: black;
 }
+.home .text-three{
+  font-size: 30px;
+  margin: 5px 0;
+  color: #4070f4;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 40px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+   #first{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+  }
+  #mypic{
+    width: 350px;
+    height: 350px;
+    margin: auto;
+  }
+  #mypic>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 70%;
+    box-shadow: hsla(212, 97%, 43%, 0.3) 0px 0px 0px 3px; 
+    animation: morph 8s ease-in-out 1s infinite;
+  
+  }
+}
+  @keyframes morph{
+  
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
 @media (max-width: 900px) {
   .about .left img{
     height: 350px;
     width: 350px;
   }
+  
 }
 
 @media (max-width: 750px) {
@@ -558,6 +711,8 @@ background-color: black;
   .contact .text{
     width: 100%;
 }
+
+
 }
 
 @media (max-width: 500px){
@@ -570,5 +725,9 @@ background-color: black;
   .skills-details .boxes .per{
     font-size: 50px;
     color: #4070f4;
+  }
+  #first{
+    width: 100%;
+    background-color: black;
   }
 }
